@@ -4,7 +4,7 @@
 // PERCENTAGE
 // GRADE
 
-var username = dosument.querySelector('#useranme');
+var username = dosument.querySelector('#username');
 var rollNumber = document.querySelector('#rollNumber');
 var chemmarks = document.querySelector('chemmarks');
 var phymarks = document.querySelector('#phymarks');
@@ -16,20 +16,38 @@ var stuRollNum = document.querySelector('#stuRollNum');
 var stuPercentage = document.querySelector('#stuPercentage');
 var stuGrade = document.querySelector('#stuGrade');
 
-function calculateResult(){
+function calculateResult() {
     var totalMarks = 500;
     var grade;
-    var obtained marks = +chemmarks.value + +phyMarks.value + +compMarks.value + +engmarks.value + +mathsmarks.value
-    
-     var percentage = obtainedMarks / totalMarks * 100
+    var obtainedmarks = +chemmarks.value + +phyMarks.value + +compMarks.value + +engmarks.value + +mathsmarks.value
 
-     if(percentage >= 80){
+    var percentage = obtainedmarks / totalMarks * 100
+
+
+    if (percentage >= 80) {
         grade = "A+"
-     } else if(percentage >= 70){
-        grade = "A"{
-            else if(percentage >= 60){
-                grade = "B"
-            }
-        }
-     }
+    } else if (perentage >= 70) {
+        grade = "A"
+    } else if (percentage >= 60) {
+        grade = "B"
+    } else if (percentage >= 50) {
+        grade = "C"
+    } else {
+        grade = "Fail"
+    }
+
+
+    stuName.innerHTML = "useername: " + username.value
+    stuRollNum.innerHTML = "roll Number: " + rollNumber.value
+    stuPercentage.innerHTML = "percentage: " + percentage + " $"
+    stuGrade.innerHTML = "grade: " + grade
+
 }
+
+
+// var body = document.querySelector('body');
+
+// function changeColor(color) {
+//     console.log(color);
+//     body.style.backgroundColor = color
+// }
